@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.igor-suhorukov</groupId>
+    <artifactId>java-ast</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <insight.version>1.2.0.redhat-133</insight.version>
+    </properties>
+    <dependencies>
+        <!-- ECJ -->
+        <dependency>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>3.11.0.v20150602-1242</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>runtime</artifactId>
+            <version>3.9.100-v20131218-1515</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.birt.runtime</groupId>
+            <artifactId>org.eclipse.core.resources</artifactId>
+            <version>3.8.101.v20130717-0806</version>
+        </dependency>
+
+        <!-- MAVEN -->
+        <dependency>
+            <groupId>io.fabric8.insight</groupId>
+            <artifactId>insight-log4j</artifactId>
+            <version>${insight.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8.insight</groupId>
+            <artifactId>insight-log-core</artifactId>
+            <version>${insight.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>common-util</artifactId>
+            <version>${insight.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.igor-suhorukov</groupId>
+            <artifactId>mvn-classloader</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0-rc2</version>
+        </dependency>
+
+        <!-- Dependency to analyze -->
+        <dependency>
+            <groupId>com.googlecode.log4jdbc</groupId>
+            <artifactId>log4jdbc</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+    </dependencies>
+</project>
